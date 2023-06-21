@@ -10,7 +10,7 @@
 #  An alias of Allowlist_key for backwards compatibility.
 # @example
 #   fluentbit::filter::modify { 'namevar': }
-define fluentbit::filter::modify (
+define fluentbit::filter::record_modifier (
   String $configfile      = '/etc/td-agent-bit/filter_modify.conf',
   String $match           = '*',
   Optional $allowlist_key = undef,
