@@ -1,0 +1,27 @@
+#
+# Managed by puppet
+#
+
+# Filter to modify output
+
+[FILTER]
+    Name  record_modifier
+<%- if @match %>
+    Match <%= @match -%>
+<% end -%>
+<% if @record %>
+<% @record.each do |key, value| %>
+    Record <%= key %> <%= value -%>
+<% end -%>
+<% end -%>
+<% if @remove_key -%>
+<%- @remove_key.each do |key, value| %>
+    Remove_key <%= key %> <%= value -%>
+<% end -%>
+<% end -%>
+<%- if @allowlist_key %>
+    Allowlist_key <%= @allowlist_key -%>
+<% end -%>
+<%- if @whitelist_key %>
+    Whitelist_key <%= @whitelist_key -%>
+<% end -%>

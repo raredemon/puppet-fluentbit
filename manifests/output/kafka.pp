@@ -8,7 +8,7 @@
 # @param match
 #  Tag to route the output.
 # @param brokers
-#  Array of IP addresses or hostnames of the target Kafka instances, e.g: 192.168.1.3:9092, 192.168.1.4:9092.
+#  IP addresses or hostnames of the target Kafka instances, e.g: 192.168.1.3:9092,192.168.1.4:9092
 # @param message_key
 #  Optional key to store the message
 # @param message_key_field
@@ -29,17 +29,17 @@
 # @example
 #  include fluentbit::output::kafka
 define fluentbit::output::kafka (
-  Array $brokers                   = ['127.0.0.1'],
   Integer $queue_full_retries         = 10,
   Optional[String] $message_key       = undef,
   Optional[String] $message_key_field = undef,
   Optional[String] $timestamp_format  = 'double',
   Optional[String] $timestamp_key     = '@timestamp',
+  String $brokers                     = '127.0.0.1',
   String $configfile                  = "/etc/td-agent-bit/output_kafka_${name}.conf",
   String $match                       = '*',
   String $topic_key                   = 'topic',
   String $topics                      = 'vector',
-  Enum ['json', 'msgpack'] $format    = 'json',
+  Enum['json', 'msgpack'] $format     = 'json',
   Enum['on', 'off'] $dynamic_topic    = 'on',
 ) {
   file { $configfile:
