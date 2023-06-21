@@ -1,0 +1,39 @@
+#
+# Managed by puppet
+#
+
+[OUTPUT]
+    Name  kafka
+<%- if @match -%>
+    Match <%= @match %>
+<% end -%>
+<% if @brokers -%>
+    Brokers  <%= @brokers %>
+<% end -%>
+<% if @dynamic_topic -%>
+    Dynamic_topic <%= @dynamic_topic %>
+<% end -%>
+<% if @topic_key -%>
+    Topic_key  <%= @topic_key %>
+<% end -%>
+<% if @topics -%>
+    Topics   <%= @topics %>
+<% end -%>
+<% if @queue_full_retries -%>
+    Queue_full_retries   <%= @queue_full_retries %>
+<% end -%>
+<% if @message_key -%>
+    Message_key   <%= @message_key %>
+<% end -%>
+<% if @message_key_field -%>
+    Message_key_field   <%= @message_key_field %>
+<% end -%>
+<% if @timestamp_format -%>
+    Timestamp_format   <%= @timestamp_format %>
+<% end -%>
+<% if @timestamp_key -%>
+    Timestamp_key   <%= @timestamp_key %>
+<% end -%>
+<% if @format -%>
+    Format   <%= @format %>
+<% end -%>
