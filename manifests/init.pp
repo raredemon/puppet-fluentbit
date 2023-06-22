@@ -199,7 +199,7 @@ class fluentbit (
     $name = $plugin['name']
 
     Resource["fluentbit::input::${name}"] {
-      "i${index}": * => merge($plugin['properties']);
+      "${index}": * => merge($plugin['properties']);
     }
   }
 
@@ -207,7 +207,7 @@ class fluentbit (
     $name = $plugin['name']
 
     Resource["fluentbit::output::${name}"] {
-      "o${index}": * => merge($plugin['properties']);
+      "${index}": * => merge($plugin['properties']);
     }
   }
 
@@ -215,7 +215,7 @@ class fluentbit (
     $name = $plugin['name']
 
     Resource["fluentbit::filter::${name}"] {
-      "f${index}": * => merge($plugin['properties']);
+      "${index}": * => merge($plugin['properties']);
     }
   }
 }

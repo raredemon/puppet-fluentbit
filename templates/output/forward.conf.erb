@@ -1,0 +1,75 @@
+#
+# Managed by Puppet
+#
+
+[OUTPUT]
+    Name  forward
+<%- if @match -%>
+    Match <%= @match %>
+<% end -%>
+<% if @host -%>
+    Host  <%= @host %>
+<% end -%>
+<% if @port -%>
+    Port  <%= @port %>
+<% end -%>
+<% if @time_as_integer -%>
+    Time_as_Integer <%= @time_as_integer %>
+<% end -%>
+<% if @upstream -%>
+    Upstream  <%= @upstream %>
+<% end -%>
+<% if @unix_path -%>
+    Unix_Path   <%= @unix_path %>
+<% end -%>
+<% if @tag -%>
+    Tag <%= @tag %>
+<% end -%>
+<% if @send_options -%>
+    Send_options <%= @send_options %>
+<% end -%>
+<% if @require_ack_response -%>
+    Require_ack_response <%= @require_ack_response %>
+<% end -%>
+<% if @compress -%>
+    Compress <%= @compress %>
+<% end -%>
+<% if @workers -%>
+    Workers <%= @workers %>
+<% end -%>
+<% if @tls -%>
+    tls <%= @tls %>
+<% if @tls_verify -%>
+    tls.verify <%= @tls_verify %>
+<% end -%>
+<% if @tls_debug -%>
+    tls.debug <%= @tls_debug %>
+<% end -%>
+<% if @tls_ca_file -%>
+    tls.ca_file <%= @tls_ca_file %>
+<% end -%>
+<% if @tls_crt_file -%>
+    tls.crt_file <%= @tls_crt_file %>
+<% end -%>
+<% if @tls_key_file -%>
+    tls.key_file <%= @tls_key_file %>
+<% end -%>
+<% if @tls_key_passwd -%>
+    tls.key_passwd <%= @tls_key_passwd %>
+<% end -%>
+<% if @shared_key -%>
+    Shared_Key <%= @shared_key %>
+<% end -%>
+<% if @empty_shared_key -%>
+    Empty_Shared_Key <%= @empty_shared_key %>
+<% end -%>
+<% if @username -%>
+    Username <%= @username %>
+<% end -%>
+<% if @password -%>
+    Password <%= @password %>
+<% end -%>
+<% if @self_hostname -%>
+    Self_Hostname <%= @self_hostname %>
+<% end -%>
+<% end -%>
