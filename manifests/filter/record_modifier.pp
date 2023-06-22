@@ -9,9 +9,9 @@
 # @param whitelist_key
 #  An alias of Allowlist_key for backwards compatibility.
 # @example
-#   fluentbit::filter::modify { 'namevar': }
+#   fluentbit::filter::record_modifier { 'namevar': }
 define fluentbit::filter::record_modifier (
-  String $configfile      = '/etc/td-agent-bit/filter_modify.conf',
+  String $configfile      = "/etc/td-agent-bit/filter_record_modifier_${name}.conf",
   String $match           = '*',
   Optional $allowlist_key = undef,
   Optional $record        = undef,
@@ -19,12 +19,10 @@ define fluentbit::filter::record_modifier (
   Optional $whitelist_key = undef,
 
 ) {
-  # create filter_modify.conf
-  # TODO: concat for multiple entries
   file { $configfile:
     ensure  => file,
     mode    => '0644',
-    content => template('fluentbit/filter/modify.conf.erb'),
+    content => template('fluentbit/filter/record_modifier.conf.erb'),
     notify  => Class['fluentbit::service'],
     require => Class['fluentbit::install'],
   }
