@@ -1,4 +1,7 @@
-# Managed by puppet
+#
+# Managed by Puppet
+#
+
 <% @variables.each do |key, value| -%>
 @SET <%= key %>=<%= value %>
 <% end -%>
@@ -28,6 +31,6 @@
     storage.backlog.mem_limit <%= @storage_backlog_mem_limit %>
 <% end -%>
 
-@INCLUDE input_*.conf
-@INCLUDE output_*.conf
-@INCLUDE filter_*.conf
+@INCLUDE inputs/*.conf
+@INCLUDE outputs/*.conf
+@INCLUDE filters/*.conf

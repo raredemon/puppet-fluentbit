@@ -7,13 +7,11 @@
 <%- if @match %>
     Match <%= @match -%>
 <% end -%>
-<% if @record %>
-<% @record.each do |key, value| %>
+<% if @record %><% @record.each do |key, value| %>
     Record <%= key %> <%= value -%>
 <% end -%>
 <% end -%>
-<% if @remove_key -%>
-<%- @remove_key.each do |key, value| %>
+<% if @remove_key -%><%- @remove_key.each do |key, value| %>
     Remove_key <%= key %> <%= value -%>
 <% end -%>
 <% end -%>
@@ -23,3 +21,4 @@
 <%- if @whitelist_key %>
     Whitelist_key <%= @whitelist_key -%>
 <% end -%>
+

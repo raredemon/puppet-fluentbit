@@ -35,7 +35,7 @@ define fluentbit::output::kafka (
   Optional[String] $timestamp_format        = undef,
   Optional[String] $timestamp_key           = undef,
   String $brokers                           = '127.0.0.1',
-  String $configfile                        = "/etc/td-agent-bit/output_kafka_${name}.conf",
+  String $configfile                        = "/etc/td-agent-bit/outputs/kafka_${name}.conf",
   String $match                             = '*',
   String $topic_key                         = 'topic',
   String $topics                            = 'vector',
