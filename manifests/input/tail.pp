@@ -94,7 +94,7 @@ define fluentbit::input::tail (
   Optional[Integer[1]] $refresh_interval                    = undef,
   Optional[Integer[1]] $rotate_wait                         = undef,
   Optional[Fluentbit::Timeunit] $ignore_older               = undef,
-  Boolean $skip_long_lines                                  = false,
+  Optional[Enum['On', 'Off']] $skip_long_lines              = undef,
   Optional[Stdlib::Absolutepath] $db                        = undef,
   Optional[Enum['Extra', 'Full', 'Normal', 'Off']] $db_sync = undef,
   Optional[Fluentbit::Sizeunit] $mem_buf_limit              = undef,
@@ -105,12 +105,9 @@ define fluentbit::input::tail (
   Optional[Integer[1]] $multiline_flush                     = undef,
   Array[String[1]] $parsers                                 = [],
 
-  Optional[Boolean] $docker_mode                            = undef,
+  Optional[Enum['On', 'Off']] $docker_mode                  = undef,
   Optional[Integer[1]] $docker_mode_flush                   = undef,
 ) {
-  $skip_long_lines_string = bool2str($skip_long_lines, 'On', 'Off')
-  $docker_mode_string = bool2str($docker_mode, 'On', 'Off')
-
   file { $configfile:
     ensure  => file,
     mode    => $fluentbit::config_file_mode,
