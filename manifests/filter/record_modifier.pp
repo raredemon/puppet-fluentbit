@@ -11,7 +11,7 @@
 # @example
 #   fluentbit::filter::record_modifier { 'namevar': }
 define fluentbit::filter::record_modifier (
-  String $configfile      = "/etc/td-agent-bit/filters/record_modifier_${name}.conf",
+  String $configfile      = "/etc/td-agent-bit/filter_record_modifier_${name}.conf",
   String $match           = '*',
   Optional $allowlist_key = undef,
   Optional $record        = undef,
@@ -19,6 +19,7 @@ define fluentbit::filter::record_modifier (
   Optional $whitelist_key = undef,
 
 ) {
+
   file { $configfile:
     ensure  => file,
     mode    => '0644',

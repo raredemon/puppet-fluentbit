@@ -61,7 +61,7 @@
 define fluentbit::output::forward (
   Stdlib::Host $host                      = '127.0.0.1',
   Stdlib::Port $port                      = 24224,
-  String $configfile                      = "/etc/td-agent-bit/outputs/forward_${name}.conf",
+  String $configfile                      = "/etc/td-agent-bit/output_forward_${name}.conf",
   String $match                           = '*',
   Boolean $time_as_integer                = false,
   Integer $tls_debug                      = 1,
