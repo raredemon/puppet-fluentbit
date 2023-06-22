@@ -105,7 +105,7 @@ define fluentbit::input::tail (
   Optional[Integer[1]] $multiline_flush                     = undef,
   Array[String[1]] $parsers                                 = [],
 
-  Boolean $docker_mode                                      = false,
+  Optional[Boolean] $docker_mode                            = undef,
   Optional[Integer[1]] $docker_mode_flush                   = undef,
 ) {
   $skip_long_lines_string = bool2str($skip_long_lines, 'On', 'Off')
