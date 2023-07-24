@@ -83,7 +83,7 @@ define fluentbit::output::forward (
   Optional[String] $unix_path                = undef,
   Optional[String] $upstream                 = undef,
   Optional[String] $username                 = undef,
-  Optional[Enum['On', 'Off']] $net_keepalive = undef,
+  Optional[Enum['on', 'off']] $net_keepalive = undef,
   Optional[Enum['On', 'Off']] $tls           = undef,
   Enum['On', 'Off'] $tls_verify              = 'On',
 ) {
