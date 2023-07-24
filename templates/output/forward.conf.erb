@@ -37,6 +37,9 @@
 <% if @workers -%>
     Workers <%= @workers %>
 <% end -%>
+<% if @net_keepalive -%>
+    net.keepalive <%= @net_keepalive %>
+<% end -%>
 <% if @tls -%>
     tls <%= @tls %>
 <% if @tls_verify -%>
@@ -71,8 +74,5 @@
 <% end -%>
 <% if @self_hostname -%>
     Self_Hostname <%= @self_hostname %>
-<% end -%>
-<% if @net_keepalive -%>
-    net.keepalive <%= @net_keepalive %>
 <% end -%>
 <% end -%>
