@@ -47,6 +47,16 @@ class fluentbit::config {
     content => template('fluentbit/td-agent-bit.conf.erb'),
   }
 
+  if $fluentbit::log_file and $fluentbit::log_file != '~' {
+    $log_dir = dirname($fluentbit::log_file)
+    file { $log_dir:
+      ensure  => directory,
+      purge   => true,
+      recurse => true,
+      mode    => '0755',
+    }
+  }
+
   $parsers = $fluentbit::parsers
 
   file { $fluentbit::parsers_file:
