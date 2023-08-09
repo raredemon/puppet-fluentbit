@@ -51,7 +51,6 @@ class fluentbit::config {
     $log_dir = dirname($fluentbit::log_file)
     file { $log_dir:
       ensure  => directory,
-      recurse => true,
       mode    => '0755',
     }
   }
